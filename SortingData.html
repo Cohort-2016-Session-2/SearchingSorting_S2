@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SortingData</title>
+</head>
+<body>
+    <script>
+        var BR = "<br>";    //HTML
+        var ARRAYSIZE = 1000;   //array size
+        var maxElement;     //the max element of ary
+        var index, index2;  //loop counters
+        var temp;           //swap variable
+        var operationCount = 0; //counter
+
+        //1. Declare and initialize string array
+        var someStrings = new Array(ARRAYSIZE);
+        var stringValue = "";   //random string
+        var randomChar;         //random ascii char
+        var wordSize;           //random word size
+
+        for(index = 0; index < ARRAYSIZE; index++)
+        {
+            //Determine a random word length of 5-19 char
+            wordSize = Math.floor(Math.random()*15)+5;
+
+            for(index2 = 0; index2 < wordSize; index2++)
+            {
+                //First character to be A-Z, i.e.
+                //ASCII codes 65-90
+                if (index2 == 0) {
+                    randomChar = Math.random()*(91-65)+65;
+                }
+                else {
+                    //lower case (a-z), 97-122
+                    randomChar = Math.random()*(123-97)+97;
+                }
+
+                //Build a string from the random characters:
+                stringValue +=
+                        String.fromCharCode(randomChar);
+            }//end for index2
+
+            //Append single string to array:
+            someStrings[index] = stringValue;
+            stringValue = "";       //reset for next time
+        }// end for index
+
+        //Preview the array data before sorting:
+        document.write("Before sorting:" + BR);
+        for (index=0; index < ARRAYSIZE; index++)
+        {
+            document.write(someStrings[index] + BR);
+        }
+
+
+
+    </script>
+</body>
+</html>

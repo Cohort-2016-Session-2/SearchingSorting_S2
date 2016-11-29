@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searching Arrays</title>
+</head>
+<body>
+    <script>
+        var SIZE = 500;     //size of array
+        var index;          //loop index
+        var searchValue;    //value sought
+        var found = false;  //found flag
+        var ES = "";
+        var BR = "<br>";
+
+        //creates an empty pre-sized array
+        var squaresArray = new Array(SIZE);
+
+        //populate the array with squares
+        //of each index value
+        for (index = 0; index < SIZE; index++) {
+            squaresArray[index] = index * index;
+        }
+
+        //User will enter a value to check
+        searchValue = prompt(
+                "Enter an integer < 250000", ES);
+        searchValue = parseInt(searchValue);
+
+        //Perform a sequential search,
+        //looking for searchValue in squaresArray
+        /*index = 0;
+        found = false;
+        while (index < SIZE && !found
+                && squaresArray[index] <
+                    searchValue) {
+            //1. index smaller than the length of array
+            //2. found is false
+            //3. the current array value < search value
+            document.write(squaresArray[index]
+                    + " " + index + BR);
+            if (squaresArray[index] == searchValue) {
+                found = true;
+                document.write("Perfect square!");
+            }
+            //increment counter
+            index++;
+        }*/
+
+        //Perform a binary search
+        var low = 0;
+        var high = SIZE - 1;
+
+        found = false;
+        index = 0;
+
+        while (low <= high && (!found))
+        {
+            //find the middle index:
+            index = Math.floor((low + high)/2);
+
+            document.write(squaresArray[index]
+                    + " " + index + BR);
+
+            //test the middle element:
+            if (squaresArray[index] == searchValue)
+            {
+                found = true;
+                document.write("PERFECT SQUARE");
+            }
+            else {
+                //the search value doesn't match
+                if (squaresArray[index] > searchValue)
+                {
+                    high = index - 1;
+                }
+                else
+                {
+                    low = index + 1;
+                }
+            } //end else
+        }//end while
+
+        if (!found)
+        {
+            document.write("NOT a square");
+        }
+
+
+    </script>
+</body>
+</html>
