@@ -29,7 +29,24 @@ for (index = 0; index < ARRAYSIZE; index++) {
 	
 	for (index2 = 0; index2 < wordSize; index2++) {
 		if (index2 == 0) {
-			randomChar = Math.random() * (91-65) + 65;
+            //randomChar = Math.random() * (91-65) + 65;
+
+            //Option B: Presorted into 5 "buckets"
+            if (index < (0.2 * ARRAYSIZE)) {
+                randomChar = Math.random() * (70-65) + 65;
+            }
+            else if (index < (0.4 * ARRAYSIZE)) {
+                randomChar = Math.random() * (76-70) + 70;
+            }
+            else if (index < (0.6 * ARRAYSIZE)) {
+                randomChar = Math.random() * (82-76) + 76;
+            }
+            else if (index < (0.8 * ARRAYSIZE)) {
+                randomChar = Math.random() * (87-82) + 82;
+            }
+            else {
+                randomChar = Math.random() * (91-87) + 87;
+            }
 		}
 		else {
 			randomChar = Math.random() * (123-97) + 97;
