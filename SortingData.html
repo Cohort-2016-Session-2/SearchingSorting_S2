@@ -53,6 +53,32 @@
             document.write(someStrings[index] + BR);
         }
 
+        //Apply a bubble sort
+        for (maxElement = ARRAYSIZE - 1;
+            maxElement > 0; maxElement--)
+        {
+            for (index = 0; index < maxElement;
+                index++)
+            {
+                if (someStrings[index] >
+                    someStrings[index + 1])
+                {
+                    temp = someStrings[index];
+                    someStrings[index] =
+                            someStrings[index + 1];
+                    someStrings[index + 1] = temp;
+                    operationCount++;
+                } //end if
+            } //end for index
+        } //end for maxElement
+
+        document.write(BR + "Operations: ");
+        document.write(operationCount + BR + BR);
+        document.write("After sorting:" + BR);
+        for (index=0; index < ARRAYSIZE; index++)
+        {
+            document.write(someStrings[index] + BR);
+        }
 
 
     </script>
