@@ -29,7 +29,25 @@
                 //First character to be A-Z, i.e.
                 //ASCII codes 65-90
                 if (index2 == 0) {
-                    randomChar = Math.random()*(91-65)+65;
+                    //Option A: Completely random:
+                    //randomChar = Math.random() * (91-65) + 65;
+
+                    //Option B: Presorted into 5 "buckets"
+                    if (index < (0.2 * ARRAYSIZE)) {
+                        randomChar = Math.random() * (70-65) + 65;
+                    }
+                    else if (index < (0.4 * ARRAYSIZE)) {
+                        randomChar = Math.random() * (76-70) + 70;
+                    }
+                    else if (index < (0.6 * ARRAYSIZE)) {
+                        randomChar = Math.random() * (82-76) + 76;
+                    }
+                    else if (index < (0.8 * ARRAYSIZE)) {
+                        randomChar = Math.random() * (87-82) + 82;
+                    }
+                    else {
+                        randomChar = Math.random() * (91-87) + 87;
+                    }
                 }
                 else {
                     //lower case (a-z), 97-122
