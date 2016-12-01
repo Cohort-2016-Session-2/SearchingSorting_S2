@@ -1,0 +1,132 @@
+<html>
+<body>
+<script type="text/javascript">
+
+// Program name: insertionSort.html
+// Purpose: Use an insertion sort on an array
+// Author: Paul Addison
+// Date last modified: 01-Sep-2011
+
+// Declare constants and variables
+var BR = "<br />";        // line break
+var ARRAYSIZE = 1000;  // array size
+var pulledIndex;            // index of element to place
+var pulledValue;            // value of element to place
+var insertIndex;             // index of element shifted
+var insertValue;             // value of element shifted
+var index;                      // general array index
+
+// Declare and initialize the array
+var someStrings = new Array(ARRAYSIZE);
+var stringValue = "";
+var randomChar = "";
+var wordSize;
+var operationCount = 0;
+
+for (index = 0; index < ARRAYSIZE; index++) {
+
+	wordSize = Math.floor(Math.random() * 15) + 5;
+	
+	for (index2 = 0; index2 < wordSize; index2++) {
+		if (index2 == 0) {
+			randomChar = Math.random() * (91-65) + 65;
+		}
+		else {
+			randomChar = Math.random() * (123-97) + 97;
+		}
+		
+		stringValue += String.fromCharCode(randomChar);
+	}//end for index2
+	someStrings[index] = stringValue;
+	stringValue = "";
+}//end for index
+
+// Identify the sorting method
+document.write("INSERTION SORT" + BR);
+// Display the array before sorting
+//document.write("Before sorting:" + BR);
+//for (index = 0; index < ARRAYSIZE; index++) {
+//   document.write(someStrings[index] + BR);
+//}
+
+//Create five subarrays:
+var someStringsAE = new Array();
+var someStringsFK = new Array();
+var someStringsLP = new Array();
+var someStringsQU = new Array();
+
+//Sort the primary array into the five subarrays based on the first letter
+for (index = 0; index < ARRAYSIZE; index++) {
+
+	else if(someStrings[index].substring(0, 1) >= "F" && someStrings[index].substring(0, 1) <= "K") {
+		someStringsFK.push(someStrings[index])
+	}
+	else if(someStrings[index].substring(0, 1) >= "L" && someStrings[index].substring(0, 1) <= "P") {
+		someStringsLP.push(someStrings[index])
+	}
+	else if(someStrings[index].substring(0, 1) >= "Q" && someStrings[index].substring(0, 1) <= "U") {
+		someStringsQU.push(someStrings[index])
+	}
+	else  {
+		someStringsVZ.push(someStrings[index])
+	}
+	operationCount++;
+}
+
+//empty the original array
+someStrings.length = 0;
+operationCount++;
+
+//Repopulate the original array using the five, pre-sorted sub arrays
+for (index = 0; index < someStringsAE.length; index++) {
+	someStrings.push(someStringsAE[index]); 
+	operationCount++;
+}
+for (index = 0; index < someStringsFK.length; index++) {
+	someStrings.push(someStringsFK[index]); 
+	operationCount++;
+}
+
+for (index = 0; index < someStringsQU.length; index++) {
+	someStrings.push(someStringsQU[index]); 
+	operationCount++;
+}
+for (index = 0; index < someStringsVZ.length; index++) {
+	someStrings.push(someStringsVZ[index]); 
+	operationCount++;
+}
+
+// Display the array before sorting
+document.write("Before sorting:" + BR);
+for (index = 0; index < ARRAYSIZE; index++) {
+   document.write(someStrings[index] + BR);
+}
+
+// Loop pulls each element
+//   from 1 to the end of the array
+for (pulledIndex = 1; pulledIndex < ARRAYSIZE; pulledIndex++) {
+   pulledValue = someStrings[pulledIndex];
+   insertIndex = pulledIndex;
+
+   // If element to the left is greater,
+   //   shift it to the right
+   //   and look at next element to the left
+   while (insertIndex > 0 && someStrings[insertIndex - 1] > pulledValue) {
+      someStrings[insertIndex] = someStrings[insertIndex - 1];
+      insertIndex = insertIndex - 1;
+	  operationCount++;
+   }
+   // Insert the pulled value when shifting ends
+   someStrings[insertIndex] = pulledValue;
+}
+
+// Display the array after sorting
+document.write(BR + "Operations: " + operationCount + BR + BR);
+document.write("After sorting:" + BR);
+for (index = 0; index < ARRAYSIZE; index++) {
+   document.write(someStrings[index] + BR);
+}
+
+</script>
+</body>
+</html>
