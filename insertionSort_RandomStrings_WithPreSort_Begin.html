@@ -54,11 +54,21 @@ var someStringsAE = new Array();
 var someStringsFK = new Array();
 var someStringsLP = new Array();
 var someStringsQU = new Array();
+var someStringsVZ = new Array();
 
 //Sort the primary array into the five subarrays based on the first letter
 for (index = 0; index < ARRAYSIZE; index++) {
 
-	else if(someStrings[index].substring(0, 1) >= "F" && someStrings[index].substring(0, 1) <= "K") {
+    if(someStrings[index].substring(0, 1)
+            >= "A" &&
+            someStrings[index].substring(0, 1)
+            <= "E") {
+        someStringsAE.push(someStrings[index])
+    }
+	else if(someStrings[index].substring(0, 1)
+            >= "F" &&
+            someStrings[index].substring(0, 1)
+            <= "K") {
 		someStringsFK.push(someStrings[index])
 	}
 	else if(someStrings[index].substring(0, 1) >= "L" && someStrings[index].substring(0, 1) <= "P") {
@@ -86,7 +96,10 @@ for (index = 0; index < someStringsFK.length; index++) {
 	someStrings.push(someStringsFK[index]); 
 	operationCount++;
 }
-
+for (index = 0; index < someStringsLP.length; index++) {
+    someStrings.push(someStringsLP[index]);
+    operationCount++;
+}
 for (index = 0; index < someStringsQU.length; index++) {
 	someStrings.push(someStringsQU[index]); 
 	operationCount++;
