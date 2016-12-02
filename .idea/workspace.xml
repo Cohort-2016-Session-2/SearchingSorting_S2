@@ -24,8 +24,8 @@
       <file leaf-file-name="insertionSort_RandomStrings_WithPreSort_Begin.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/insertionSort_RandomStrings_WithPreSort_Begin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+            <state relative-caret-position="189">
+              <caret line="58" column="74" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -177,12 +177,12 @@
       <workItem from="1480467430710" duration="145000" />
       <workItem from="1480547147394" duration="16000" />
       <workItem from="1480547175307" duration="927000" />
-      <workItem from="1480632676860" duration="1139000" />
+      <workItem from="1480632676860" duration="1501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4736000" />
+    <option name="totallyTimeSpent" value="5098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="707" extended-state="0" />
@@ -279,8 +279,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/insertionSort_RandomStrings_WithPreSort_Begin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+        <state relative-caret-position="189">
+          <caret line="58" column="74" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
           <folding />
         </state>
       </provider>
